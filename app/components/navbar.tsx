@@ -21,15 +21,15 @@ export default  function Navbar () {
                     height={170}
                 />
 
-                <div className="flex item-center gap-8">
+                <div className="flex items-center gap-8">
                     {navMenu.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="realtive text-xl font-medium"
+                            className="relative text-xl font-medium text-black group"
                         >
                         {item.name}
-                        <span className="absolute -botton-1 left-0 h-1 bg-black transition-all duration-300"></span>
+                        <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#0069E2] transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                     ))}
                 </div>
