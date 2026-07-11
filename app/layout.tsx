@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 
-const opensans = Open_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-open-sans",
-  weight: ["400","500","700",],
-})
+  weight: ["400", "500", "700"],
+});
 
 export const metadata: Metadata = {
   title: "NestKos",
-  description: "NextKos plaform cari kosan terdekat",
+  description: "Platform pencarian kos terdekat dengan informasi lengkap dan terpercaya.",
 };
 
 export default function RootLayout({
@@ -20,10 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${opensans.variable} h-full antialiased`}
-    >
+    <html lang="id" className={`${inter.className} antialiased`}>
       <body>
         <Navbar />
         {children}

@@ -1,9 +1,10 @@
 import Image from "next/image";
+import {Icon} from "@iconify/react"
 
 export default function Home() {
   return (
     <div className="w-full bg-white">
-      <div className="relative h-[200px] md:h-[600px]">
+      <div className="relative min-h-screen">
 
         <div className="absolute inset-0">
           <Image 
@@ -17,7 +18,7 @@ export default function Home() {
 
         {/* hero section*/}
         <div className="relative z-10 px-8 md:px-16 lg:px-24">
-          <div className="flex flex-col md:flex-row items-center gap-10 h-[70vh]">
+          <div className="flex min-h-screen items-center">
 
             <div className="w-full text-center md:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold
@@ -25,7 +26,7 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-[#008CFF] to-[#50B0FF] text-transparent bg-clip-text"> Kebutuhanmu</span>
               </h1>
 
-              <p className="text-white text-lg w-[100vh] max-w-2xl">Cari informasi kos terpercaya, bandingkan fasilitas, dan lakukan pemesanan dengan mudah dalam satu platform.</p>
+              <p className="text-white text-lg max-w-2xl">Cari informasi kos terpercaya, bandingkan fasilitas, dan lakukan pemesanan dengan mudah dalam satu platform.</p>
             </div>
           </div>
         </div>
@@ -33,7 +34,7 @@ export default function Home() {
         {/*search*/}
         <div className="absolute w-full -bottom-10 left-0 right-0 px-8 md:px-16 lg:px-24">
 
-          <div className="bg-white rounded-xl p-6 text-black flex flex-col gap-8">
+          <div className="bg-white rounded-xl p-6 text-black flex flex-col gap-8 shadow-sm">
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 
@@ -44,6 +45,13 @@ export default function Home() {
                   type="text"
                   placeholder="Masukan Lokasi..."
                   className="w-full px-4 py-2 border border-gray-400 rounded text-black" />
+                
+                <Icon 
+                  icon="lsicon:location-outline" 
+                  width={20} 
+                  height={20}
+                  className="absolute left-100 top-1/3 -translate-y-1/2 text-black"
+                ></Icon>
               </div>
 
               {/*Tipe*/}
@@ -90,6 +98,13 @@ export default function Home() {
         </div>
        
       </div>
+
+      <section className="mt-30 min-h-screen bg-white px-8 md:px-16 lg:px-24">
+        <div className="flex flex-col items-center justify-center">
+           <h2 className="text-black font-semibold text-2xl">Kos Terdekat dari Lokasi Anda</h2>
+           <p className="text-gray-400 text-base">Temukan kos yang berada di sekitar area yang Anda cari.</p>
+        </div>
+      </section>
     </div>
   );
 }
